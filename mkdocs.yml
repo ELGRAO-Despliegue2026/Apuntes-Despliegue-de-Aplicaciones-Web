@@ -1,0 +1,64 @@
+# Configuración básica
+site_name: Apuntes Despliegue de Aplicaciones Web
+site_description: Notas y apuntes de la asignatura de Despliegue de Aplicaciones Web
+site_author: Carles Calatayud Trescolí
+
+# Configuración del tema
+theme:
+  name: material
+  language: es                          # Idioma de la interfaz (buscador, botones)
+  palette:
+    # Modo Claro / Oscuro alternable
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo                   # Color principal (puedes cambiarlo por teal, blue, deep purple, etc.)
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+  features:
+    - navigation.tabs                   # Pestañas superiores para cada asignatura
+    - navigation.sections               # Secciones colapsables en la barra lateral
+    - navigation.top                    # Botón para volver arriba
+    - search.suggest                    # Sugerencias automáticas en la búsqueda
+    - search.highlight                  # Resalta la palabra buscada dentro del tema
+    - content.code.copy                 # Botón para copiar bloques de código
+
+# Extensiones Markdown para apuntes
+markdown_extensions:
+  - admonition                          # Bloques de notas, avisos y consejos (!!! note)
+  - pymdownx.details                    # Bloques desplegables/colapsables
+  - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format               
+  - pymdownx.taskbuttons                # Listas de tareas con casillas [x]
+  - pymdownx.arithmatex:                # Soporte para fórmulas matemáticas con MathJax / LaTeX
+      generic: true
+
+# Estructura del menú de navegación (carpetas dentro de /docs)
+nav:
+  - Inicio: index.md
+  
+  - Programación:
+      - Introducción: programacion/index.md
+      - Tema 1 - Estructuras de Datos: programacion/tema1.md
+      - Tema 2 - Algoritmos de Búsqueda: programacion/tema2.md
+      - Prácticas: programacion/practicas.md
+
+  - Bases de Datos:
+      - Introducción: bases-de-datos/index.md
+      - Tema 1 - Modelo Relacional: bases-de-datos/tema1.md
+      - Tema 2 - SQL Básico: bases-de-datos/tema2.md
+
+  - Historia de la Ciencia:
+      - Semana 1 - Revolución Científica: historia/semana1.md
+      - Semana 2 - Siglo XIX: historia/semana2.md
