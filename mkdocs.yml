@@ -32,15 +32,17 @@ theme:
     - content.code.copy                 # Botón para copiar bloques de código
 
 # Extensiones Markdown para apuntes
+# Extensiones Markdown para apuntes
 markdown_extensions:
   - admonition                          # Bloques de notas, avisos y consejos (!!! note)
   - pymdownx.details                    # Bloques desplegables/colapsables
   - pymdownx.superfences:
-        custom_fences:
-          - name: mermaid
-            class: mermaid
-            format: !!python/name:pymdownx.superfences.fence_code_format               
-  - pymdownx.taskbuttons                # Listas de tareas con casillas [x]
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format               
+  - pymdownx.tasklist:                  # Listas de tareas con casillas [x]
+      custom_checkbox: true
   - pymdownx.arithmatex:                # Soporte para fórmulas matemáticas con MathJax / LaTeX
       generic: true
 
