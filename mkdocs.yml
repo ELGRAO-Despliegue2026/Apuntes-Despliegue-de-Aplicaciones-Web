@@ -67,6 +67,8 @@ nav:
       - 2. Docker: 
           - Índice: UD01 - Git y Docker/2. Docker/1. Docker.md
           - Introducción: UD01 - Git y Docker/2. Docker/2. Introducción.md
+          - Instalación: UD01 - Git y Docker/2. Docker/3. Instalación.md
+          - Docker Básico: UD01 - Git y Docker/2. Docker/4. Docker Básico.md
 
   - UD02 - Apache y Nginx:
       - Apache y Nginx: UD02 - Apache y Nginx/unidad-2-apache-nginx.md
