@@ -11,7 +11,7 @@ theme:
     # Modo Claro / Oscuro alternable
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo                   # Color principal (puedes cambiarlo por teal, blue, deep purple, etc.)
+      primary: indigo                   # Color principal
       accent: indigo
       toggle:
         icon: material/brightness-7
@@ -32,16 +32,16 @@ theme:
     - content.code.copy                 # Botón para copiar bloques de código
 
 # Extensiones Markdown para apuntes
-# Extensiones Markdown para apuntes
 markdown_extensions:
-- attr_list                            # Permite añadir atributos a los elementos Markdown
+  - attr_list
+  - toc
   - admonition                          # Bloques de notas, avisos y consejos (!!! note)
   - pymdownx.details                    # Bloques desplegables/colapsables
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format               
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tasklist:                  # Listas de tareas con casillas [x]
       custom_checkbox: true
   - pymdownx.arithmatex:                # Soporte para fórmulas matemáticas con MathJax / LaTeX
@@ -50,18 +50,18 @@ markdown_extensions:
 # Estructura del menú de navegación (carpetas dentro de /docs)
 nav:
   - Inicio: index.md
-  
-  - Programación:
-      - Introducción: programacion/index.md
-      - Tema 1 - Estructuras de Datos: programacion/tema1.md
-      - Tema 2 - Algoritmos de Búsqueda: programacion/tema2.md
-      - Prácticas: programacion/practicas.md
+  - Recursos: recursos.md
 
-  - Bases de Datos:
-      - Introducción: bases-de-datos/index.md
-      - Tema 1 - Modelo Relacional: bases-de-datos/tema1.md
-      - Tema 2 - SQL Básico: bases-de-datos/tema2.md
+  - UD01 - Git y Docker:
+      - Introducción: UD01 - Git y Docker/index.md
+      - 1. Git: UD01 - Git y Docker/1. Git.md
+      - 2. Docker: UD01 - Git y Docker/2. Docker.md
 
-  - Historia de la Ciencia:
-      - Semana 1 - Revolución Científica: historia/semana1.md
-      - Semana 2 - Siglo XIX: historia/semana2.md
+  - UD02 - Apache y Nginx:
+      - Apache y Nginx: UD02 - Apache y Nginx/unidad-2-apache-nginx.md
+
+  - UD03 - Servidor de Aplicaciones:
+      - Servidor de Aplicaciones: UD03 - Servidor de Aplicaciones/unidad-3-servidor-aplicaciones.md
+
+  - UD04 - CI/CD:
+      - CI/CD: UD04 - CICD/unidad-4-ci-cd.md
