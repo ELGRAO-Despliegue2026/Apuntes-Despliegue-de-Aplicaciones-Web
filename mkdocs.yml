@@ -54,7 +54,7 @@ nav:
   - Recursos: recursos.md
 
   - UD01 - Git y Docker:
-      - 1. Git - Contenidos:
+      - 1. Git:
           - Índice: UD01 - Git y Docker/1. Git/1. Git.md
           - Instalación y configuración: UD01 - Git y Docker/1. Git/2. Instalacion y configuracion.md
           - Áreas y flujo de trabajo: UD01 - Git y Docker/1. Git/3. Areas y flujo de trabajo.md
@@ -64,7 +64,9 @@ nav:
           - Visualización del proyecto: UD01 - Git y Docker/1. Git/7. Visualizacion.md
           - Cheatsheet: UD01 - Git y Docker/1. Git/8. Cheatsheet.md
           - Arquitectura main/develop/feature: UD01 - Git y Docker/1. Git/9. Arquitectura main-dev-feature.md
-      - 2. Docker: UD01 - Git y Docker/2. Docker/2. Docker.md
+      - 2. Docker: 
+          - Índice: UD01 - Git y Docker/2. Docker/1. Docker.md
+          - Introducción: UD01 - Git y Docker/2. Docker/2. Introducción.md
 
   - UD02 - Apache y Nginx:
       - Apache y Nginx: UD02 - Apache y Nginx/unidad-2-apache-nginx.md

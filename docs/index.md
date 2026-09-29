@@ -1,4 +1,3 @@
-// ...existing code...
 # Despliegue de Aplicaciones Web — Temario (DAW)
 
 Bienvenida y guía rápida del temario de la asignatura.
