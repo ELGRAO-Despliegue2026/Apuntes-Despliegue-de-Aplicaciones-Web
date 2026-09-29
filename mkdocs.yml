@@ -34,6 +34,7 @@ theme:
 # Extensiones Markdown para apuntes
 # Extensiones Markdown para apuntes
 markdown_extensions:
+- attr_list                            # Permite añadir atributos a los elementos Markdown
   - admonition                          # Bloques de notas, avisos y consejos (!!! note)
   - pymdownx.details                    # Bloques desplegables/colapsables
   - pymdownx.superfences:
