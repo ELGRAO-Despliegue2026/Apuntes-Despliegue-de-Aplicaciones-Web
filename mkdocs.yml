@@ -24,8 +24,9 @@ theme:
         icon: material/brightness-4
         name: Cambiar a modo claro
   features:
-    - navigation.tabs                   # Pestañas superiores para cada asignatura
     - navigation.sections               # Secciones colapsables en la barra lateral
+    - navigation.expand                 # Muestra el árbol de navegación desplegado por defecto
+    - navigation.indexes                # Permite asociar una página a una sección/carpeta
     - navigation.top                    # Botón para volver arriba
     - search.suggest                    # Sugerencias automáticas en la búsqueda
     - search.highlight                  # Resalta la palabra buscada dentro del tema
@@ -53,9 +54,8 @@ nav:
   - Recursos: recursos.md
 
   - UD01 - Git y Docker:
-      - Introducción: UD01 - Git y Docker/index.md
-      - 1. Git: UD01 - Git y Docker/1. Git/1. Git.md
       - 1. Git - Contenidos:
+          - Índice: UD01 - Git y Docker/1. Git/1. Git.md
           - Instalación y configuración: UD01 - Git y Docker/1. Git/2. Instalacion y configuracion.md
           - Áreas y flujo de trabajo: UD01 - Git y Docker/1. Git/3. Areas y flujo de trabajo.md
           - Ramas: UD01 - Git y Docker/1. Git/4. Ramas.md

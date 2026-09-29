@@ -20,6 +20,3 @@ Prácticas sugeridas
 Recursos
 
 - Documentación oficial de Git y Docker.
-
-[1. Git](./1.%20Git/1.%20Git.md)
-[2. Docker](./2.%20Docker/2.%20Docker.md)
