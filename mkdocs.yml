@@ -54,14 +54,16 @@ nav:
 
   - UD01 - Git y Docker:
       - Introducción: UD01 - Git y Docker/index.md
-      - 1. Git:
-          - Introducción: UD01 - Git y Docker/1. Git/1. Git.md
+      - 1. Git: UD01 - Git y Docker/1. Git/1. Git.md
+      - 1. Git - Contenidos:
           - Instalación y configuración: UD01 - Git y Docker/1. Git/2. Instalacion y configuracion.md
           - Áreas y flujo de trabajo: UD01 - Git y Docker/1. Git/3. Areas y flujo de trabajo.md
           - Ramas: UD01 - Git y Docker/1. Git/4. Ramas.md
           - Repositorio remoto: UD01 - Git y Docker/1. Git/5. Repositorio remoto.md
           - Revertir cambios: UD01 - Git y Docker/1. Git/6. Revertir cambios.md
           - Visualización del proyecto: UD01 - Git y Docker/1. Git/7. Visualizacion.md
+          - Cheatsheet: UD01 - Git y Docker/1. Git/8. Cheatsheet.md
+          - Arquitectura main/develop/feature: UD01 - Git y Docker/1. Git/9. Arquitectura main-dev-feature.md
       - 2. Docker: UD01 - Git y Docker/2. Docker/2. Docker.md
 
   - UD02 - Apache y Nginx:
