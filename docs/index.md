@@ -20,3 +20,4 @@ Bienvenida y guía rápida del temario de la asignatura.
 - [Recursos y referencias](recursos.md) (crea este archivo si lo necesitas).
 - Previsualizar localmente: `mkdocs serve`
 - Compilar sitio: `mkdocs build`
+
