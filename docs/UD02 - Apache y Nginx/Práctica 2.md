@@ -103,3 +103,49 @@ Los directorios que encontramos són:
     - **conf-available**: Guarda fragmentos de configuración general que no corresponden directamente a un módulo concreto, como reglas de seguridad globales, páginas de error personalizadas etc.
     - **conf_enabled**: Contiene enlaces simbólicos a **conf-available**. Se gestiona con `a2enconf` y `a2disconf`.
 
+Modifica el archivo **/etc/apache2/apache2.conf**. Para hacerlo, ántes haz una copia de seguridad (tendrás que usar `sudo` para poder ejecutar `cp` y guardarlo como `apache2.bak`). Después, edita el archivo `apache2.conf` con `sudo nano /etc/apache2/apache2.conf`.
+
+Busca las líneas **IncludeOptional**. Debería aparecer:
+```
+IncludeOptional mods-enabled/*.load
+IncludeOptional mods-enabled/*.conf
+Include ports.conf
+```
+Lo que hacen estas líneas es modularizar el archivo de configuración, actuando como una especie de enlace con los archivos de la derecha de la instrucción (`mods-enabled/*.load` por ejemplo). De ésta manera, si nosotros modificamos el archivo `ports.conf`, en el archivo `apache2.conf` se cargará la versión actualizada.
+
+#### Añadir puertos de escucha.
+
+En ésta sección añadiremos un nuevo puerto de escucha a nuestro servidor, es decir, que además del puerto `80` el servidor recibirá peticiones de otro puerto (en éste caso el `12345`)
+
+En tu VM, añade otra regla de redirección de puertos que haga que el puerto `12345` de la MV se pase al puerto `8081` de nuestro equipo en la IP `127.0.0.1` y reinicia la máquina.
+
+!!! tip **sudo reboot**
+
+A continuación, abre el archivo `/etc/apache2/ports.conf` y añade el puerto `12345` a los puertos de escucha. 
+
+!!! warning Importante
+    Para aplicar los cambios en cualquier archivo de **configuración** de apache es necesario reiniciar el servidor. Ésto se puede hacer con:
+    `sudo systemctl reload apache2`. 
+
+    Los cambios en los **archivos de repositorio** (.html, .php etc.) no requieren reiniciar el servidor.
+
+Si has realizado bien el cambio, aparecerá la misma página que en `127.0.0.1:8080`.
+
+!!! tip 
+    Para verificar el estado de **apache2** puedes hacer `sudo systemctl status apache2`
+
+#### Cambiar la prioridad de la extensión
+
+El módulo que se encarga de decir qué archivo se debe devolver cuando se hace una petición a un directorio es `dir.conf`. Si vemos los contenidos de `mod-enabled/dir.conf` veremos algo así:
+
+`DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm`
+
+
+!!! example Ejemplo
+    Cuando el usuario hace una petición a `http://tudominio.com/tienda/`, apache buscará en la carpeta `/var/www/html/tienda/` el archivo `index.html`. Si no encuentra ninguno, entonces devolverá `index.cgi`, si no encuentra hará `index.pl` y así sucesivamente. Si modificamos el órden de los archivos y ponemos primero `index.php`, apache buscará primero el archivo `index.php` y si no lo encuentra seguirá con el resto.
+
+
+!!! danger Cuidado
+    La modificación de los archivos dentro de **mod-enabled** es algo delicado y hay que hacerlo siempre con mucho cuidado.
+
+
