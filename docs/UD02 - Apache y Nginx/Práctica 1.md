@@ -55,14 +55,18 @@ uname -m
    * **Tamaño:** `15,00 GB` (suficiente para el sistema base y el servidor web).
 5. **Configuración de Red (Importante):**
    * Selecciona la máquina virtual creada y entra en **Configuración > Red**.
-   * En el **Adaptador 1**, cambia la opción *Conectado a **Adaptador Puente (Bridged):** La VM obtendrá una IP dentro del mismo rango que tu PC anfitrión.
+   * En el **Adaptador 1**, asegúrate de tener la opción "NAT".
+   En el Reenvio de puertos tendrás que añadir dos reglas:
+
+| **Nombre** | **Protocolo** | **IP anfitrión** | **Puerto anfitrión** | **IP invitado** | **Puerto invitado** |
+| --- | --- | --- | --- | --- | --- |
+| HTTP | TCP | 127.0.0.1 | 8080 | 10.0.2.15 | 80 |
+| SSH | TCP | | 2222 |  | 22 |
+
 
 ---
 
 ## Paso 4: Instalación Paso a Paso de Debian 13 Mínimo
-
->[!WARNING]
->Desmarca la casilla de Instalación A
 
 1. Inicia la máquina virtual con la ISO insertada.
 2. En el menú de arranque de GRUB, selecciona **Install** o **Graphical Install**.
@@ -113,5 +117,3 @@ Una vez reiniciada la máquina virtual, debes comprobar que el sistema ha arranc
    ```bash
    ip a
    ```
-
-¡La máquina virtual con Debian 13 Mínimo está lista para la instalación de Apache!

@@ -71,7 +71,15 @@ nav:
           - Docker Básico: UD01 - Git y Docker/2. Docker/4. Docker Básico.md
 
   - UD02 - Apache y Nginx:
-      - Apache y Nginx: UD02 - Apache y Nginx/unidad-2-apache-nginx.md
+      - Teoría:
+        - Índice: UD02 - Apache y Nginx/Índice.md
+        - Arquitectura Web: UD02 - Apache y Nginx/Arquitectura Web.md
+        - Apache: UD02 - Apache y Nginx/Apache.md
+        - Nginx: UD02 - Apache y Nginx/Nginx.md
+      - Prácticas:
+        - Práctica 1: UD02 - Apache y Nginx/Prácticas/Práctica 1.md
+        - Práctica 2: UD02 - Apache y Nginx/Prácticas/Práctica 2.md
+        - Práctica 3: UD02 - Apache y Nginx/Prácticas/Práctica 3.md
 
   - UD03 - Servidor de Aplicaciones:
       - Servidor de Aplicaciones: UD03 - Servidor de Aplicaciones/unidad-3-servidor-aplicaciones.md
