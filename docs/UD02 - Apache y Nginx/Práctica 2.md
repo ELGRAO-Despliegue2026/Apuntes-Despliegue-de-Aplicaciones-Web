@@ -13,8 +13,8 @@ sudo apt install openssh-server
 
 Para verificar que está funcionando haz `sudo systemctl status ssh`. Debería aparecer active(running).
 
->[!NOTE]
-En el caso real en el que se trabajaría con un servidor con una ip asignada dentro de la red se hallaría la ip mediante `ip a` y se conectaría mediante `ssh <usuario>@<ip>`. En éste caso, hemos establecido que se utilizará NAT, por lo que son redes privadas y el procedimiento es el que se indica a continuación.
+!!! Note Nota
+    En el caso real en el que se trabajaría con un servidor con una ip asignada dentro de la red se hallaría la ip mediante `ip a` y se conectaría mediante `ssh <usuario>@<ip>`. En éste caso, hemos establecido que se utilizará NAT, por lo que son redes privadas y el procedimiento es el que se indica a continuación.
 
 Para conectarnos con el servidor desde nuestro equipo haremos `ssh <tu_usuario>@127.0.0.1 -p 2222`.
 
@@ -47,11 +47,11 @@ Para que todos los usuarios puedan modificar los archivos de dentro de `/var/www
 sudo chmod 777 –R /var/www/html
 ```
 
->[!NOTE]
-> Recuerda que el al hacer `chmod 777` lo que hacemos es dar permisos de **Lectura (4) + Escritura (2) + Ejecución (1) = 7** al `<propietario><grupo><otros>`.
+!!! note **Nota**
+    Recuerda que el al hacer `chmod 777` lo que hacemos es dar permisos de **Lectura (4) + Escritura (2) + Ejecución (1) = 7** al `<propietario><grupo><otros>`.
 
->[!WARNING]
-> Esto se puede hacer solo en un entorno de desarrollo. En un entorno de producción nunca asignes permisos completos a todos los usuarios.
+!!! warning **IMPORTANTE**
+    Esto se puede hacer solo en un entorno de desarrollo. En un entorno de producción nunca asignes permisos completos a todos los usuarios.
 
 ### 3. Configuración de Apache
 
@@ -103,4 +103,3 @@ Los directorios que encontramos són:
     - **conf-available**: Guarda fragmentos de configuración general que no corresponden directamente a un módulo concreto, como reglas de seguridad globales, páginas de error personalizadas etc.
     - **conf_enabled**: Contiene enlaces simbólicos a **conf-available**. Se gestiona con `a2enconf` y `a2disconf`.
 
-    
