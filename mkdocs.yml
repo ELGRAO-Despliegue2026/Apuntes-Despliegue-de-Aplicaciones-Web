@@ -72,10 +72,9 @@ nav:
 
   - UD02 - Apache y Nginx:
       - Teoría:
-        - Índice: UD02 - Apache y Nginx/Índice.md
-        - Arquitectura Web: UD02 - Apache y Nginx/Arquitectura Web.md
-        - Apache: UD02 - Apache y Nginx/Apache.md
-        - Nginx: UD02 - Apache y Nginx/Nginx.md
+        - Índice: UD02 - Apache y Nginx/1. Índice.md
+        - Arquitectura Web: UD02 - Apache y Nginx/2. Arquitectura Web.md
+        - Apache: UD02 - Apache y Nginx/3. Apache.md
       - Prácticas:
         - Práctica 1: UD02 - Apache y Nginx/Práctica 1.md
         - Práctica 2: UD02 - Apache y Nginx/Práctica 2.md
