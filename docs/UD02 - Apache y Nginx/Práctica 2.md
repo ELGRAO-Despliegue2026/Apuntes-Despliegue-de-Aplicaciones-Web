@@ -119,7 +119,8 @@ En ésta sección añadiremos un nuevo puerto de escucha a nuestro servidor, es 
 
 En tu VM, añade otra regla de redirección de puertos que haga que el puerto `12345` de la MV se pase al puerto `8081` de nuestro equipo en la IP `127.0.0.1` y reinicia la máquina.
 
-!!! tip **sudo reboot**
+!!! tip 
+    **sudo reboot**
 
 A continuación, abre el archivo `/etc/apache2/ports.conf` y añade el puerto `12345` a los puertos de escucha. 
 
@@ -149,3 +150,83 @@ El módulo que se encarga de decir qué archivo se debe devolver cuando se hace 
     La modificación de los archivos dentro de **mod-enabled** es algo delicado y hay que hacerlo siempre con mucho cuidado.
 
 
+### 4. VirtualHosts
+
+Como hemos visto, un servidor web tiene un único repositorio ( **/var/www/html** ) donde buscar los recursos de los clientes, por lo que un servidor sólo servirá a una aplicación, ya que si ponemos los archivos de dos aplicaciones web diferentes en un mismo repositorio, ¿cómo va a diferenciar el servidor a qué aplicación pertenece qué archivo?
+
+Sin embargo, podemos querer tener múltiples aplicaciones alojadas en el mismo servidor, ya que, si nuestra aplicación web no es demasiado grande, no consumirá todos los recursos del servidor.
+
+Para solucionar ésto, apache permite configurar **Virtual Hosts**, que básicamente lo que hace es leer la petición de llegada, identificar el nombre de dominio (`misitio2.com` por ejemplo) o la dirección `IP` y dirigir al usuario a la carpeta correcta donde se encuentran los archivos de esa aplicación.
+
+La configuración del **VirtualHost** tiene los siguientes tres pasos:
+- Configurar el DNS
+- Crear y editar el archivo de configuración
+- Activar el host virtual
+
+#### Configurar DNS
+En el entorno de producción, para configurar el DNS tendríamos que acceder a nuestro VPS, ir al Panel de Gestión DNS y crear los Registros DNS necesarios.
+
+En nuestro casso, estamos trabajando con un entorno de desarrollo, por lo que *"engañaremos"* a nuestro equipo modificando el archivo local de DNS **/etc/hosts**. Éste archivo consiste en la relación entre:
+
+[IP] <---- [DOMINIO]
+
+!!! Example Ejemplo
+    Si añadimos la línea:
+    **127.0.0.1 miweb.com**
+    Al buscar en el navegador miweb.com la petición irá a 127.0.0.1, que es la url de *loopback*.
+
+!!! Tip 
+    Puedes usar `wget` sin descargar los archivos de la web con los tags -qO-. 
+    Por ejemplo, `wget -qO- 127.0.0.1:80`.
+
+#### Configuración en Apache
+Apache tiene un archivo de configuración de host virtual **000-default.conf** dentro de la carpeta **sites-available**. Para trabajar con el, haremos una copia y luego modificaremos el nuevo archivo. Por ejemplo: 
+
+```bash
+cd /etc/apache2/sites-available
+sudo cp 000-default.conf 1-virtualhost.conf
+sudo nano 1-virtualhost.conf
+```
+
+El archivo de configuración incluye la configuración del VirtualHost.
+
+```html
+<VirtualHost *:80>
+    # 1. El dominio que vas a escuchar
+    ServerName miempresa.com 
+    ServerAlias www.miempresa.com
+
+    # 2. El email del administrador
+    ServerAdmin admin@miempresa.com
+
+    # 3. La carpeta física donde están los archivos del proyecto
+    DocumentRoot /var/www/mi-sitio/public
+
+    # 4. Logs independientes para este sitio
+    ErrorLog ${APACHE_LOG_DIR}/mi-sitio-error.log
+    CustomLog ${APACHE_LOG_DIR}/mi-sitio-access.log combined
+</VirtualHost>
+```
+Aquí estableces qué nombres de server van a buscar info a qué carpeta. Por ejemplo, cuando al servidor le llegue una petición al puerto 80 con la url miempresa.com o www.miempresa.com buscará en la carpeta /var/www/mi-sitio/public los archivos.
+
+!!! warning peligro
+    La configuración por defecto de los directorios se encuentra dentro de **/etc/apache2/apache.conf**. Dentro de los tags `<Directory /var/wwww>` encontramos la configuración del directorio donde se encuentran los archivos de nuestra web. La opción **Indexes** lo que hace es que cuando no se encuentre el archivo predeterminado `index.html` apache mostrará un índice con los archivos del directorio. Ésto puede ser un problema de seguridad. ![width:100px](../../img/01_Index.png)
+
+Para modificar la configuración del directorio únicamente en nuestro VirtualHost manteniendo la configuración global, lo que haremos será añadir al archivo de configuración `/etc/apache2/sites-available/1-virtualhost.conf` la configuración del directorio eliminando la opción Index. También se puede establecer aquí si el index en el directorio tiene otro nombre con DirectoryIndex 
+
+```html
+<VirtualHost *:80>	
+	ServerName web1
+	ServerAlias www.pagina1.com
+	ServerAdmin webmaster@localhost
+	DocumentRoot <ruta-al-directorio>
+</VirtualHost>
+<Directory <ruta-al-directorio>>
+	Options FollowSymLinks
+    DirectoryIndex miindex.html
+	AllowOverride None
+	Require all granted	
+</Directory>
+```
+
+Una vez se tiene toda la configuración del VirtualHost, sólo queda activarlo haciendo `sudo a2ensite 1-virtualhost.conf` y a continuación reiniciar el servicio haciendo `service apache2 reload`.
