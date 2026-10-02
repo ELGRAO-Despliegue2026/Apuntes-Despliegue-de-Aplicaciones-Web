@@ -1,0 +1,2063 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notas y apuntes de la asignatura de Despliegue de Aplicaciones Web">
+      
+      
+        <meta name="author" content="Carles Calatayud Trescolí">
+      
+      
+      
+        <link rel="prev" href="../Pr%C3%A1ctica%201/">
+      
+      
+        <link rel="next" href="../../UD03%20-%20Servidor%20de%20Aplicaciones/unidad-3-servidor-aplicaciones/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Práctica 2 - Apuntes Despliegue de Aplicaciones Web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-2" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Apuntes Despliegue de Aplicaciones Web" class="md-header__button md-logo" aria-label="Apuntes Despliegue de Aplicaciones Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes Despliegue de Aplicaciones Web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Práctica 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Apuntes Despliegue de Aplicaciones Web" class="md-nav__button md-logo" aria-label="Apuntes Despliegue de Aplicaciones Web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Apuntes Despliegue de Aplicaciones Web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD01 - Git y Docker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UD01 - Git y Docker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Git
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Git
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/1.%20Git/1.%20Git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/1.%20Git/2.%20Instalacion%20y%20configuracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación y configuración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/1.%20Git/3.%20Areas%20y%20flujo%20de%20trabajo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Áreas y flujo de trabajo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/1.%20Git/4.%20Ramas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ramas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/1.%20Git/5.%20Repositorio%20remoto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repositorio remoto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/1.%20Git/6.%20Revertir%20cambios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revertir cambios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/1.%20Git/7.%20Visualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visualización del proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/1.%20Git/8.%20Cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/1.%20Git/9.%20Arquitectura%20main-dev-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura main/develop/feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Docker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Docker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/2.%20Docker/1.%20Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/2.%20Docker/2.%20Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/2.%20Docker/3.%20Instalaci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD01%20-%20Git%20y%20Docker/2.%20Docker/4.%20Docker%20B%C3%A1sico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD02 - Apache y Nginx
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UD02 - Apache y Nginx
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teoría
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teoría
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20%C3%8Dndice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Índice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20Arquitectura%20Web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Apache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pr%C3%A1ctica%201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-realizar-conexion-mediante-ssh-al-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Realizar conexión mediante SSH al servidor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuracion-basica-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configuración básica de Apache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configuración básica de Apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instalacion-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Instalación de Apache
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-html-de-apache2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Html de Apache2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configuracion-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configuración de Apache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configuración de Apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos-de-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archivos de configuración
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directorios-available-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directorios available-enabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-puertos-de-escucha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Añadir puertos de escucha.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-la-prioridad-de-la-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cambiar la prioridad de la extensión
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-virtualhosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. VirtualHosts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. VirtualHosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurar-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurar DNS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-en-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración en Apache
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD02 - Apache y Nginx/Práctica 3.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD03 - Servidor de Aplicaciones
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UD03 - Servidor de Aplicaciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD03%20-%20Servidor%20de%20Aplicaciones/unidad-3-servidor-aplicaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servidor de Aplicaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD04 - CI/CD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UD04 - CI/CD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UD04%20-%20CICD/unidad-4-ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-realizar-conexion-mediante-ssh-al-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Realizar conexión mediante SSH al servidor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuracion-basica-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configuración básica de Apache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configuración básica de Apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instalacion-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Instalación de Apache
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-html-de-apache2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Html de Apache2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configuracion-de-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configuración de Apache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configuración de Apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos-de-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archivos de configuración
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directorios-available-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directorios available-enabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-puertos-de-escucha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Añadir puertos de escucha.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-la-prioridad-de-la-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cambiar la prioridad de la extensión
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-virtualhosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. VirtualHosts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. VirtualHosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurar-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurar DNS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-en-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración en Apache
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica-2">Práctica 2</h1>
+<p>Para realizar ésta práctica se supone que ya tendréis disponible la máquina virtual con debian mínimo de la práctica 1.</p>
+<h2 id="1-realizar-conexion-mediante-ssh-al-servidor">1. Realizar conexión mediante SSH al servidor</h2>
+<p>Instala en el servidor <code>openssh-server</code> haciendo:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server
+</code></pre></div>
+<p>Para verificar que está funcionando haz <code>sudo systemctl status ssh</code>. Debería aparecer active(running).</p>
+<div class="admonition note nota">
+<p class="admonition-title">Note</p>
+<p>En el caso real en el que se trabajaría con un servidor con una ip asignada dentro de la red se hallaría la ip mediante <code>ip a</code> y se conectaría mediante <code>ssh &lt;usuario&gt;@&lt;ip&gt;</code>. En éste caso, hemos establecido que se utilizará NAT, por lo que son redes privadas y el procedimiento es el que se indica a continuación.</p>
+</div>
+<p>Para conectarnos con el servidor desde nuestro equipo haremos <code>ssh &lt;tu_usuario&gt;@127.0.0.1 -p 2222</code>.</p>
+<h2 id="2-configuracion-basica-de-apache">2. Configuración básica de Apache</h2>
+<p>A partir de tener la conexión con el servidor mediante ssh, haremos el resto de pasos desde nuestro local.</p>
+<h3 id="1-instalacion-de-apache">1. Instalación de Apache</h3>
+<p>Hay dos modos de instalar apache: mediante el sistema de paquetes predeterminado de Linux (apt) o descargando su código fuente, descomprimiendo el paquete en <code>/usr/local/src</code> compilándolo y instalándolo. </p>
+<p>Por simplicidad haremos la instalación desde apt, pero cambe destacar que la instalación a partir de su código fuente permite la configuración de la misma.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
+</code></pre></div>
+<p>Verifica el estado</p>
+<h3 id="2-html-de-apache2">2. Html de Apache2</h3>
+<p>Una vez instalado Apache en el servidor, desde nuestro cliente podremos acceder a la web por defecto de Apache accediendo a 127.0.0.1:8080.</p>
+<p>La web utiliza <code>/var/www/html</code> como repositorio. Inspecciona el repositorio. </p>
+<p>Para que todos los usuarios puedan modificar los archivos de dentro de <code>/var/www/html</code> sin utilizar <code>sudo</code> puedes dar permisos a todos los usuarios con:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>–R<span class="w"> </span>/var/www/html
+</code></pre></div>
+<p>!!! note <strong>Nota</strong>
+    Recuerda que el al hacer <code>chmod 777</code> lo que hacemos es dar permisos de <strong>Lectura (4) + Escritura (2) + Ejecución (1) = 7</strong> al <code>&lt;propietario&gt;&lt;grupo&gt;&lt;otros&gt;</code>.</p>
+<p>!!! warning <strong>IMPORTANTE</strong>
+    Esto se puede hacer solo en un entorno de desarrollo. En un entorno de producción nunca asignes permisos completos a todos los usuarios.</p>
+<h3 id="3-configuracion-de-apache">3. Configuración de Apache</h3>
+<p>La configuración de apache se hace en los archivos de texto encontrados en <code>/etc/apache2/</code>.</p>
+<p>Inspeccionando los archivos podemos ver la siguiente estructura:</p>
+<div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">7178</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">14</span>:28<span class="w"> </span>apache2.conf
+drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:02<span class="w"> </span>conf-available
+drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:02<span class="w"> </span>conf-enabled
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">1782</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">14</span>:28<span class="w"> </span>envvars
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">31063</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">2025</span><span class="w"> </span>magic
+drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">12288</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:02<span class="w"> </span>mods-available
+drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:02<span class="w"> </span>mods-enabled
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">274</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">14</span>:28<span class="w"> </span>ports.conf
+drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:02<span class="w"> </span>sites-available
+drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">12</span>:02<span class="w"> </span>sites-enabled
+</code></pre></div>
+<h4 id="archivos-de-configuracion">Archivos de configuración</h4>
+<ul>
+<li>
+<p><strong>apache2.conf</strong>: Es el archivo de configuración principal del servidor. En este archivo se gestionan las <strong>rutas, procesos, límites y logs</strong> del servidor, además de incluir el resto de archivos.</p>
+</li>
+<li>
+<p><strong>ports.conf</strong>: Define los <strong>puertos de red y direcciones IP</strong> en los que el servidor escucha las peticiones entrantes (por ejemplo, en el puerto <code>80</code> escucha peticiones HTTP y en el <code>443</code> peticiones HTTPS)</p>
+</li>
+<li>
+<p><strong>envvars</strong>: Contiene variables de entorno del SO que Apache utiliza al arrancar. </p>
+</li>
+<li>
+<p><strong>magic</strong>: Define reglas para que Apache determine el <strong>tipo MIME</strong> de un archivo analizando solo sus primeros bytes, en lugar de guiarse por su extensión.</p>
+</li>
+</ul>
+<h4 id="directorios-available-enabled">Directorios available-enabled</h4>
+<p>Los directorios dentro de esta carpeta contienen parejas de funcionalidades con el sufijo <code>*-available</code> o <code>*-enabled</code> que tienen como finalidad permitir <strong>activar o desactivar sitios web y configuraciones de Apache sin eliminar archivos de configuración</strong>. </p>
+<p>El funcionamiento es sencillo, en los archivos dentro de <code>*-available</code> guardas <strong>todos los archivos de configuración / sitio web etc.</strong> y después en el respectivo <code>*-enabled</code> haces un enlace simbólico que apunta a los archivos de <code>*-available</code> que quieres activar. </p>
+<p>Los directorios que encontramos són:</p>
+<ul>
+<li>
+<p><strong>sites-available/ y sites-enabled/</strong>: </p>
+<ul>
+<li><strong>sites-available</strong>: Aloja los archivos de cada <strong>sitio web</strong> o <strong>VirtualHost</strong> alojado en el servidor</li>
+<li><strong>sites-enabled</strong>: Contiene enlaces que apuntan a <code>sites-available</code> y activa sitios web con las herramientas <code>a2ensite</code> (Apache 2 Enable Site) y <code>a2dissite</code> (Apache 2 Disable Site).</li>
+</ul>
+</li>
+<li>
+<p><strong>mods-available/ y mods-enabled/</strong>:
+    Apache tiene una estructura modular que permite añadir funcionalidades específicas al servidor web a través de módulos. Por ejemplo, si se quiere permitir conexiones seguras mediante HTTPS y gestionar certificados TLS/SSL se tiene el módulo <code>mod_ssl</code>. Si se quiere reescribir URLs para hacerlas más amigables se tiene el módulo <code>mod_rewrite</code>. Si se quiere poder ejecutar archivos <code>.php</code> desde el servidor sin necesidad de comunicarse con un programa externo se puede habilitar <code>mod_php</code>, que permite ejecutar el código dinámico utilizando el motor interno de PHP y generando el HTML resultante que envía al usuario.</p>
+<p>De la misma manera que en <code>sites-*</code>, en <strong>mods-available</strong> se tienen las configuraciones de los módulos de apache y en <strong>mods-enabled</strong> están los enlacs simbólicos que apuntan a <strong>mods-enabled</strong>. La herramienta que usa es <code>a2enmod</code> y <code>a2dismod</code>.</p>
+</li>
+<li>
+<p><strong>conf-availble/ y conf-enabled/</strong>:</p>
+<ul>
+<li><strong>conf-available</strong>: Guarda fragmentos de configuración general que no corresponden directamente a un módulo concreto, como reglas de seguridad globales, páginas de error personalizadas etc.</li>
+<li><strong>conf_enabled</strong>: Contiene enlaces simbólicos a <strong>conf-available</strong>. Se gestiona con <code>a2enconf</code> y <code>a2disconf</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Modifica el archivo <strong>/etc/apache2/apache2.conf</strong>. Para hacerlo, ántes haz una copia de seguridad (tendrás que usar <code>sudo</code> para poder ejecutar <code>cp</code> y guardarlo como <code>apache2.bak</code>). Después, edita el archivo <code>apache2.conf</code> con <code>sudo nano /etc/apache2/apache2.conf</code>.</p>
+<p>Busca las líneas <strong>IncludeOptional</strong>. Debería aparecer:
+<div class="highlight"><pre><span></span><code>IncludeOptional mods-enabled/*.load
+IncludeOptional mods-enabled/*.conf
+Include ports.conf
+</code></pre></div>
+Lo que hacen estas líneas es modularizar el archivo de configuración, actuando como una especie de enlace con los archivos de la derecha de la instrucción (<code>mods-enabled/*.load</code> por ejemplo). De ésta manera, si nosotros modificamos el archivo <code>ports.conf</code>, en el archivo <code>apache2.conf</code> se cargará la versión actualizada.</p>
+<h4 id="anadir-puertos-de-escucha">Añadir puertos de escucha.</h4>
+<p>En ésta sección añadiremos un nuevo puerto de escucha a nuestro servidor, es decir, que además del puerto <code>80</code> el servidor recibirá peticiones de otro puerto (en éste caso el <code>12345</code>)</p>
+<p>En tu VM, añade otra regla de redirección de puertos que haga que el puerto <code>12345</code> de la MV se pase al puerto <code>8081</code> de nuestro equipo en la IP <code>127.0.0.1</code> y reinicia la máquina.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>sudo reboot</strong></p>
+</div>
+<p>A continuación, abre el archivo <code>/etc/apache2/ports.conf</code> y añade el puerto <code>12345</code> a los puertos de escucha. </p>
+<div class="admonition warning importante">
+<p class="admonition-title">Warning</p>
+<p>Para aplicar los cambios en cualquier archivo de <strong>configuración</strong> de apache es necesario reiniciar el servidor. Ésto se puede hacer con:
+<code>sudo systemctl reload apache2</code>. </p>
+<p>Los cambios en los <strong>archivos de repositorio</strong> (.html, .php etc.) no requieren reiniciar el servidor.</p>
+</div>
+<p>Si has realizado bien el cambio, aparecerá la misma página que en <code>127.0.0.1:8080</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Para verificar el estado de <strong>apache2</strong> puedes hacer <code>sudo systemctl status apache2</code></p>
+</div>
+<h4 id="cambiar-la-prioridad-de-la-extension">Cambiar la prioridad de la extensión</h4>
+<p>El módulo que se encarga de decir qué archivo se debe devolver cuando se hace una petición a un directorio es <code>dir.conf</code>. Si vemos los contenidos de <code>mod-enabled/dir.conf</code> veremos algo así:</p>
+<p><code>DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm</code></p>
+<div class="admonition example ejemplo">
+<p class="admonition-title">Example</p>
+<p>Cuando el usuario hace una petición a <code>http://tudominio.com/tienda/</code>, apache buscará en la carpeta <code>/var/www/html/tienda/</code> el archivo <code>index.html</code>. Si no encuentra ninguno, entonces devolverá <code>index.cgi</code>, si no encuentra hará <code>index.pl</code> y así sucesivamente. Si modificamos el órden de los archivos y ponemos primero <code>index.php</code>, apache buscará primero el archivo <code>index.php</code> y si no lo encuentra seguirá con el resto.</p>
+</div>
+<div class="admonition danger cuidado">
+<p class="admonition-title">Danger</p>
+<p>La modificación de los archivos dentro de <strong>mod-enabled</strong> es algo delicado y hay que hacerlo siempre con mucho cuidado.</p>
+</div>
+<h3 id="4-virtualhosts">4. VirtualHosts</h3>
+<p>Como hemos visto, un servidor web tiene un único repositorio ( <strong>/var/www/html</strong> ) donde buscar los recursos de los clientes, por lo que un servidor sólo servirá a una aplicación, ya que si ponemos los archivos de dos aplicaciones web diferentes en un mismo repositorio, ¿cómo va a diferenciar el servidor a qué aplicación pertenece qué archivo?</p>
+<p>Sin embargo, podemos querer tener múltiples aplicaciones alojadas en el mismo servidor, ya que, si nuestra aplicación web no es demasiado grande, no consumirá todos los recursos del servidor.</p>
+<p>Para solucionar ésto, apache permite configurar <strong>Virtual Hosts</strong>, que básicamente lo que hace es leer la petición de llegada, identificar el nombre de dominio (<code>misitio2.com</code> por ejemplo) o la dirección <code>IP</code> y dirigir al usuario a la carpeta correcta donde se encuentran los archivos de esa aplicación.</p>
+<p>La configuración del <strong>VirtualHost</strong> tiene los siguientes tres pasos:
+- Configurar el DNS
+- Crear y editar el archivo de configuración
+- Activar el host virtual</p>
+<h4 id="configurar-dns">Configurar DNS</h4>
+<p>En el entorno de producción, para configurar el DNS tendríamos que acceder a nuestro VPS, ir al Panel de Gestión DNS y crear los Registros DNS necesarios.</p>
+<p>En nuestro casso, estamos trabajando con un entorno de desarrollo, por lo que <em>"engañaremos"</em> a nuestro equipo modificando el archivo local de DNS <strong>/etc/hosts</strong>. Éste archivo consiste en la relación entre:</p>
+<p>[IP] &lt;---- [DOMINIO]</p>
+<div class="admonition example ejemplo">
+<p class="admonition-title">Example</p>
+<p>Si añadimos la línea:
+<strong>127.0.0.1 miweb.com</strong>
+Al buscar en el navegador miweb.com la petición irá a 127.0.0.1, que es la url de <em>loopback</em>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Puedes usar <code>wget</code> sin descargar los archivos de la web con los tags -qO-. 
+Por ejemplo, <code>wget -qO- 127.0.0.1:80</code>.</p>
+</div>
+<h4 id="configuracion-en-apache">Configuración en Apache</h4>
+<p>Apache tiene un archivo de configuración de host virtual <strong>000-default.conf</strong> dentro de la carpeta <strong>sites-available</strong>. Para trabajar con el, haremos una copia y luego modificaremos el nuevo archivo. Por ejemplo: </p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/etc/apache2/sites-available
+sudo<span class="w"> </span>cp<span class="w"> </span><span class="m">000</span>-default.conf<span class="w"> </span><span class="m">1</span>-virtualhost.conf
+sudo<span class="w"> </span>nano<span class="w"> </span><span class="m">1</span>-virtualhost.conf
+</code></pre></div>
+<p>El archivo de configuración incluye la configuración del VirtualHost.</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">VirtualHost</span> <span class="err">*</span><span class="na">:80</span><span class="p">&gt;</span>
+    # 1. El dominio que vas a escuchar
+    ServerName miempresa.com 
+    ServerAlias www.miempresa.com
+
+    # 2. El email del administrador
+    ServerAdmin admin@miempresa.com
+
+    # 3. La carpeta física donde están los archivos del proyecto
+    DocumentRoot /var/www/mi-sitio/public
+
+    # 4. Logs independientes para este sitio
+    ErrorLog ${APACHE_LOG_DIR}/mi-sitio-error.log
+    CustomLog ${APACHE_LOG_DIR}/mi-sitio-access.log combined
+<span class="p">&lt;/</span><span class="nt">VirtualHost</span><span class="p">&gt;</span>
+</code></pre></div>
+Aquí estableces qué nombres de server van a buscar info a qué carpeta. Por ejemplo, cuando al servidor le llegue una petición al puerto 80 con la url miempresa.com o www.miempresa.com buscará en la carpeta /var/www/mi-sitio/public los archivos.</p>
+<div class="admonition warning peligro">
+<p class="admonition-title">Warning</p>
+<p>La configuración por defecto de los directorios se encuentra dentro de <strong>/etc/apache2/apache.conf</strong>. Dentro de los tags <code>&lt;Directory /var/wwww&gt;</code> encontramos la configuración del directorio donde se encuentran los archivos de nuestra web. La opción <strong>Indexes</strong> lo que hace es que cuando no se encuentre el archivo predeterminado <code>index.html</code> apache mostrará un índice con los archivos del directorio. Ésto puede ser un problema de seguridad. <img alt="width:100px" src="../../img/01_Index.png" /></p>
+</div>
+<p>Para modificar la configuración del directorio únicamente en nuestro VirtualHost manteniendo la configuración global, lo que haremos será añadir al archivo de configuración <code>/etc/apache2/sites-available/1-virtualhost.conf</code> la configuración del directorio eliminando la opción Index. También se puede establecer aquí si el index en el directorio tiene otro nombre con DirectoryIndex </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">VirtualHost</span> <span class="err">*</span><span class="na">:80</span><span class="p">&gt;</span>  
+    ServerName web1
+    ServerAlias www.pagina1.com
+    ServerAdmin webmaster@localhost
+    DocumentRoot <span class="p">&lt;</span><span class="nt">ruta-al-directorio</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">VirtualHost</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">Directory</span> <span class="err">&lt;</span><span class="na">ruta-al-directorio</span><span class="p">&gt;</span>&gt;
+    Options FollowSymLinks
+    DirectoryIndex miindex.html
+    AllowOverride None
+    Require all granted 
+<span class="p">&lt;/</span><span class="nt">Directory</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Una vez se tiene toda la configuración del VirtualHost, sólo queda activarlo haciendo <code>sudo a2ensite 1-virtualhost.conf</code> y a continuación reiniciar el servicio haciendo <code>service apache2 reload</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
