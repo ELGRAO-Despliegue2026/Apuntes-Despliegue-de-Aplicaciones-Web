@@ -53,27 +53,29 @@ nav:
   - Inicio: index.md
   - Recursos: recursos.md
 
-  - UD01 - Git y Docker:
-      - 1. Git:
-          - Índice: UD01 - Git y Docker/1. Git/1. Git.md
-          - Instalación y configuración: UD01 - Git y Docker/1. Git/2. Instalacion y configuracion.md
-          - Áreas y flujo de trabajo: UD01 - Git y Docker/1. Git/3. Areas y flujo de trabajo.md
-          - Ramas: UD01 - Git y Docker/1. Git/4. Ramas.md
-          - Repositorio remoto: UD01 - Git y Docker/1. Git/5. Repositorio remoto.md
-          - Revertir cambios: UD01 - Git y Docker/1. Git/6. Revertir cambios.md
-          - Visualización del proyecto: UD01 - Git y Docker/1. Git/7. Visualizacion.md
-          - Cheatsheet: UD01 - Git y Docker/1. Git/8. Cheatsheet.md
-          - Arquitectura main/develop/feature: UD01 - Git y Docker/1. Git/9. Arquitectura main-dev-feature.md
-      - 2. Docker: 
-          - Índice: UD01 - Git y Docker/2. Docker/1. Docker.md
-          - Introducción: UD01 - Git y Docker/2. Docker/2. Introducción.md
-          - Instalación: UD01 - Git y Docker/2. Docker/3. Instalación.md
-          - Docker Básico: UD01 - Git y Docker/2. Docker/4. Docker Básico.md
+  - UD01 - Control de versiones:
+      - Teoría:
+          - Índice: UD01 - Control de versiones1. Git/1. Git.md
+          - Instalación y configuración: UD01 - Control de versiones1. Git/2. Instalacion y configuracion.md
+          - Áreas y flujo de trabajo: UD01 - Control de versiones1. Git/3. Areas y flujo de trabajo.md
+          - Ramas: UD01 - Control de versiones1. Git/4. Ramas.md
+          - Repositorio remoto: UD01 - Control de versiones1. Git/5. Repositorio remoto.md
+          - Revertir cambios: UD01 - Control de versiones1. Git/6. Revertir cambios.md
+          - Visualización del proyecto: UD01 - Control de versiones1. Git/7. Visualizacion.md
+          - Cheatsheet: UD01 - Control de versiones1. Git/8. Cheatsheet.md
+          - Arquitectura main/develop/feature: UD01 - Control de versiones1. Git/9. Arquitectura main-dev-feature.md
+      - Repaso Docker: 
+          - Índice: UD01 - Control de versiones2. Docker/1. Docker.md
+          - Introducción: UD01 - Control de versiones2. Docker/2. Introducción.md
+          - Instalación: UD01 - Control de versiones2. Docker/3. Instalación.md
+          - Docker Básico: UD01 - Control de versiones2. Docker/4. Docker Básico.md
 
   - UD02 - Apache y Nginx:
       - Teoría:
         - Índice: UD02 - Apache y Nginx/1. Índice.md
-        - Arquitectura Web: UD02 - Apache y Nginx/2. Arquitectura Web.md
+        - Arquitecturas Web: UD02 - Apache y Nginx/2. Arquitectura Web.md
+        - Protocolos de internet: UD02 - Apache y Nginx/3. Protocolos de internet.md
+        - Actividades: UD02 - Apache y Nginx/4. Actividades.md
         - Apache: UD02 - Apache y Nginx/3. Apache.md
       - Prácticas:
         - Práctica 1: UD02 - Apache y Nginx/Práctica 1.md
@@ -87,11 +89,13 @@ nav:
       - CI/CD: UD04 - CICD/unidad-4-ci-cd.md
 
   - UD05 - Documentación:
-      - Índice: UD05 - Documentación/1. Índice.md
-      - Herramientas de generación de documentación: UD05 - Documentación/2. Herramientas de generación de documentación.md
-      - Documentación de componentes software: UD05 - Documentación/3. Documentación de componentes software.md
-      - Formatos de documentación: UD05 - Documentación/4. Formatos de documentación.md
-      - Herramientas colaborativas: UD05 - Documentación/5. Herramientas colaborativas.md
-      - Sistemas de control de versiones: UD05 - Documentación/6. Sistemas de control de versiones.md
-      - Accesibilidad y seguridad de la documentación: UD05 - Documentación/7. Accesibilidad y seguridad de la documentación.md
-      - Tutorial MkDocs: UD05 - Documentación/8. Tutorial MkDocs.md
+      - Teoría:
+        - Índice: UD05 - Documentación/1. Índice.md
+        - Herramientas de generación de documentación: UD05 - Documentación/2. Herramientas de generación de documentación.md
+        - Documentación de componentes software: UD05 - Documentación/3. Documentación de componentes software.md
+        - Formatos de documentación: UD05 - Documentación/4. Formatos de documentación.md
+        - Herramientas colaborativas: UD05 - Documentación/5. Herramientas colaborativas.md
+        - Sistemas de control de versiones: UD05 - Documentación/6. Sistemas de control de versiones.md
+        - Accesibilidad y seguridad de la documentación: UD05 - Documentación/7. Accesibilidad y seguridad de la documentación.md
+      - Prácticas:  
+        - Tutorial MkDocs: UD05 - Documentación/8. Tutorial MkDocs.md
