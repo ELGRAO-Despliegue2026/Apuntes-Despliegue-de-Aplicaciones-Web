@@ -56,13 +56,13 @@ nav:
   - UD01 - Control de versiones:
       - Teoría:
           - Índice: UD01 - Control de versiones/1. Git/1. Git.md
-          - Instalación y configuración: UD01 - Control de versiones1. Git/1. Git/2. Instalacion y configuracion.md
-          - Áreas y flujo de trabajo: UD01 - Control de versiones1. Git/1. Git/3. Areas y flujo de trabajo.md
-          - Ramas: UD01 - Control de versiones1. Git/1.Git/4. Ramas.md
-          - Repositorio remoto: UD01 - Control de versiones1. Git/1. Git/5. Repositorio remoto.md
-          - Revertir cambios: UD01 - Control de versiones1. Git/1. Git/6. Revertir cambios.md
-          - Visualización del proyecto: UD01 - Control de versiones1. Git/1. Git/7. Visualizacion.md
-          - Cheatsheet: UD01 - Control de versiones1. Git/1.Git/8. Cheatsheet.md
+          - Instalación y configuración: UD01 - Control de versiones/1. Git/2. Instalacion y configuracion.md
+          - Áreas y flujo de trabajo: UD01 - Control de versiones/1. Git/3. Areas y flujo de trabajo.md
+          - Ramas: UD01 - Control de versiones/1. Git/4. Ramas.md
+          - Repositorio remoto: UD01 - Control de versiones/1. Git/5. Repositorio remoto.md
+          - Revertir cambios: UD01 - Control de versiones/1. Git/6. Revertir cambios.md
+          - Visualización del proyecto: UD01 - Control de versiones/1. Git/7. Visualizacion.md
+          - Cheatsheet: UD01 - Control de versiones/1. Git/8. Cheatsheet.md
           - Arquitectura main/develop/feature: UD01 - Control de versiones/1. Git/9. Arquitectura main-dev-feature.md
           
   - UD02 - Apache y Nginx:
