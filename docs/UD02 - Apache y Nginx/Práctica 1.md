@@ -49,7 +49,7 @@ uname -m
    * **Versión:** Debian (64-bit) o Debian (ARM64) según tu procesador.
 3. **Hardware:**
    * **Memoria RAM:** Asigna mínimo `1024 MB` (1 GB) o `2048 MB` (2 GB). Al no llevar entorno gráfico, consumirá muy pocos recursos.
-   * **Procesadores:** 1 o 2 vCPUs.
+   * **Procesadores:** 1 vCPUs.
 4. **Disco Duro Virtual:**
    * Selecciona **Crear un disco duro virtual ahora**.
    * **Tamaño:** `15,00 GB` (suficiente para el sistema base y el servidor web).
@@ -81,16 +81,15 @@ uname -m
 5. **Particionado del disco:**
    * Método de particionado: **Guiado - usar todo el disco**.
    * Selecciona el disco duro virtual creado.
-   * Esquema: **Todos los ficheros en una sola partición (recomendado para novatos)**.
+   * Esquema: **Todos los ficheros en una sola partición**.
    * Selecciona **Finalizar el particionado y escribir los cambios en el disco** y confirma marcando **Sí**.
 6. **Selección de Programas (*Paso Clave para versión Mínima*):**
    * Cuando aparezca la pantalla **"Selección de programas" / "Tasksel"**:
      * **Desmarca:** `Entorno de escritorio Debian` / `Debian desktop environment`.
      * **Desmarca:** Cualquier GUI adicional (`GNOME`, `XFCE`, `KDE`, etc.).
      * **Marca:** `Utilidades estándar del sistema` (*standard system utilities*).
-     * **Marca (Opcional):** `SSH server` (útil para conectarse remotamente).
+     * **Marca:** `SSH server` (útil para conectarse remotamente).
 
-> **Navegación:** Usa las flechas para moverte, la **Barra Espaciadora** para marcar/desmarcar casillas, y la tecla **Tabulador** para seleccionar el botón *Continuar*.
 
 7. **Instalación del cargador de arranque GRUB:**
    * Selecciona **Sí** para instalar GRUB en el unidad principal.
