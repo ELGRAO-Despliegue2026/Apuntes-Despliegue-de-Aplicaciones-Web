@@ -30,8 +30,6 @@ ip a
 
 Anota la dirección IP de la interfaz de red de la máquina virtual (por ejemplo `192.168.1.50`). La llamaremos `<IP>` durante el resto de la práctica.
 
-!!! tip
-    Si estás usando NAT con redirección de puertos (como en la práctica 2), usa la IP `127.0.0.1` como `<IP>`, ya que es la dirección a la que accede tu equipo anfitrión.
 
 A partir de ahora, los dos dominios que usaremos serán:
 

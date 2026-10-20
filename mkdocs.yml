@@ -53,44 +53,81 @@ nav:
   - Inicio: index.md
   - Recursos: recursos.md
 
-  - UD01 - Control de versiones:
+  - UD01 - Introducción. Control de versiones y documentación:
       - Teoría:
-          - Índice: UD01 - Control de versiones/1. Git/1. Git.md
-          - Instalación y configuración: UD01 - Control de versiones/1. Git/2. Instalacion y configuracion.md
-          - Áreas y flujo de trabajo: UD01 - Control de versiones/1. Git/3. Areas y flujo de trabajo.md
-          - Ramas: UD01 - Control de versiones/1. Git/4. Ramas.md
-          - Repositorio remoto: UD01 - Control de versiones/1. Git/5. Repositorio remoto.md
-          - Revertir cambios: UD01 - Control de versiones/1. Git/6. Revertir cambios.md
-          - Visualización del proyecto: UD01 - Control de versiones/1. Git/7. Visualizacion.md
-          - Cheatsheet: UD01 - Control de versiones/1. Git/8. Cheatsheet.md
-          - Arquitectura main/develop/feature: UD01 - Control de versiones/1. Git/9. Arquitectura main-dev-feature.md
-          
-  - UD02 - Apache y Nginx:
+          - Índice: UD01 - Introducción. Control de versiones y documentación/1. Git/1. Git.md
+          - Instalación y configuración: UD01 - Introducción. Control de versiones y documentación/1. Git/2. Instalacion y configuracion.md
+          - Áreas y flujo de trabajo: UD01 - Introducción. Control de versiones y documentación/1. Git/3. Areas y flujo de trabajo.md
+          - Ramas: UD01 - Introducción. Control de versiones y documentación/1. Git/4. Ramas.md
+          - Repositorio remoto: UD01 - Introducción. Control de versiones y documentación/1. Git/5. Repositorio remoto.md
+          - Revertir cambios: UD01 - Introducción. Control de versiones y documentación/1. Git/6. Revertir cambios.md
+          - Visualización del proyecto: UD01 - Introducción. Control de versiones y documentación/1. Git/7. Visualizacion.md
+          - Cheatsheet: UD01 - Introducción. Control de versiones y documentación/1. Git/8. Cheatsheet.md
+          - Arquitectura main/develop/feature: UD01 - Introducción. Control de versiones y documentación/1. Git/9. Arquitectura main-dev-feature.md
+
+  - UD02 - WWW y protocolo HTTP:
       - Teoría:
-        - Índice: UD02 - Apache y Nginx/1. Índice.md
-        - Arquitecturas Web: UD02 - Apache y Nginx/2. Arquitectura Web.md
-        - Protocolos de internet: UD02 - Apache y Nginx/3. Protocolos de internet.md
-        - Actividades: UD02 - Apache y Nginx/4. Actividades.md
-        - Apache: UD02 - Apache y Nginx/3. Apache.md
+        - Índice: UD02 - WWW y protocolo HTTP/1. Índice.md
+        - Arquitectura Web: UD02 - WWW y protocolo HTTP/2. Arquitectura Web.md
+        - Protocolos de internet: UD02 - WWW y protocolo HTTP/3. Protocolos de internet.md
+        - Actividades: UD02 - WWW y protocolo HTTP/4. Actividades.md
+        - HTTP: UD02 - WWW y protocolo HTTP/5. HTTP.md
       - Prácticas:
-        - Práctica 1: UD02 - Apache y Nginx/Práctica 1.md
-        - Práctica 2: UD02 - Apache y Nginx/Práctica 2.md
-        - Práctica 3: UD02 - Apache y Nginx/Práctica 3.md
-
-  - UD03 - Servidor de Aplicaciones:
-      - Servidor de Aplicaciones: UD03 - Servidor de Aplicaciones/unidad-3-servidor-aplicaciones.md
-
-  - UD04 - CI/CD:
-      - CI/CD: UD04 - CICD/unidad-4-ci-cd.md
-
-  - UD05 - Documentación:
+        - Práctica 1: UD02 - WWW y protocolo HTTP/Práctica 1.md
+        - Práctica 2: UD02 - WWW y protocolo HTTP/Práctica 2.md        
+  
+  - UD03 - Introducción a los servidores web. Apache:
       - Teoría:
-        - Índice: UD05 - Documentación/1. Índice.md
-        - Herramientas de generación de documentación: UD05 - Documentación/2. Herramientas de generación de documentación.md
-        - Documentación de componentes software: UD05 - Documentación/3. Documentación de componentes software.md
-        - Formatos de documentación: UD05 - Documentación/4. Formatos de documentación.md
-        - Herramientas colaborativas: UD05 - Documentación/5. Herramientas colaborativas.md
-        - Sistemas de control de versiones: UD05 - Documentación/6. Sistemas de control de versiones.md
-        - Accesibilidad y seguridad de la documentación: UD05 - Documentación/7. Accesibilidad y seguridad de la documentación.md
-      - Prácticas:  
-        - Tutorial MkDocs: UD05 - Documentación/8. Tutorial MkDocs.md
+        - Índice: UD03 - Introducción a servidores Web. Apache/1. Índice.md
+        - Arquitecturas Web: UD03 - Introducción a servidores Web. Apache/2. Arquitectura Web.md
+        - Protocolos de internet: UD03 - Introducción a servidores Web. Apache/3. Protocolos de internet.md
+        - Actividades: UD03 - Introducción a servidores Web. Apache/4. Actividades.md
+        - Apache: UD03 - Introducción a servidores Web. Apache/5. Apache.md
+      - Prácticas:
+        - Práctica 1: UD03 - Introducción a servidores Web. Apache/Práctica 1.md
+        - Práctica 2: UD03 - Introducción a servidores Web. Apache/Práctica 2.md
+        - Práctica 3: UD03 - Introducción a servidores Web. Apache/Práctica 3.md
+
+  - UD04 - Gestión Avanzada de Servidores Web:
+    - Teoría:
+      - Índice: UD04 - Gestión Avanzada de Servidores Web/1. Índice.md
+    - Prácticas:
+      - Práctica 1: UD04 - Gestión Avanzada de Servidores Web/Práctica 1.md
+
+  - UD05 - Administración de servidores de Aplicaciones:
+      - Teoría:
+        - Índice: UD05 - Administración de servidores de Aplicaciones/1. Índice.md
+
+  - UD06 - Servidores de transferencia de archivos:
+      - Teoría:
+        - Índice: UD06 - Servidores de transferencia de archivos/1. Índice.md
+        - FTP: UD06 - Servidores de transferencia de archivos/2. FTP.md
+        - SFTP: UD06 - Servidores de transferencia de archivos/3. SFTP.md
+        - SCP: UD06 - Servidores de transferencia de archivos/4. SCP.md
+        - Rsync: UD06 - Servidores de transferencia de archivos/5. Rsync.md
+      - Prácticas:
+        - Práctica 1: UD06 - Servidores de transferencia de archivos/Práctica 1.md
+  
+  - UD07 - Servicios red implicados en el despliegue de una aplicación Web:
+      - Teoría:
+        - Índice: UD07 - Servicios red implicados en el despliegue de una aplicación Web/1. Índice.md
+        - DNS: UD07 - Servicios red implicados en el despliegue de una aplicación Web/2. DNS.md
+        - DHCP: UD07 - Servicios red implicados en el despliegue de una aplicación Web/3. DHCP.md
+        - NTP: UD07 - Servicios red implicados en el despliegue de una aplicación Web/4. NTP.md
+        - SNMP: UD07 - Servicios red implicados en el despliegue de una aplicación Web/5. SNMP.md
+        - SMTP: UD07 - Servicios red implicados en el despliegue de una aplicación Web/6. SMTP.md
+        - POP3 e IMAP: UD07 - Servicios red implicados en el despliegue de una aplicación Web/7. POP3 e IMAP.md
+      - Prácticas:
+        - Práctica 1: UD07 - Servicios red implicados en el despliegue de una aplicación Web/Práctica 1.md
+
+  - UD08 - Documentación:
+      - Teoría:
+        - Índice: UD08 - Documentación/1. Índice.md
+        - Herramientas de generación de documentación: UD08 - Documentación/2. Herramientas de generación de documentación.md
+        - Documentación de componentes software: UD08 - Documentación/3. Documentación de componentes software.md
+        - Formatos de documentación: UD08 - Documentación/4. Formatos de documentación.md
+        - Herramientas colaborativas: UD08 - Documentación/5. Herramientas colaborativas.md
+        - Sistemas de control de versiones: UD08 - Documentación/6. Sistemas de control de versiones.md
+        - Accesibilidad y seguridad de la documentación: UD08 - Documentación/7. Accesibilidad y seguridad de la documentación.md
+      - Prácticas:
+        - Tutorial MkDocs: UD08 - Documentación/8. Tutorial MkDocs.md
