@@ -25,7 +25,7 @@ sudo a2enmod rewrite
 sudo systemctl reload apache2
 ```
 
-Comprueba que el módulo está activo:
+Comprueba que el módulo está activo: (Ojo, según desde que usuario instalaste apache2 quizás debes hacer `sudo -i`)
 
 ```bash
 apache2ctl -M | grep rewrite
@@ -124,6 +124,21 @@ curl -I http://localhost/producto/15
 ```
 
 Debería devolver **200 OK**, sirviendo realmente `producto.html` aunque la URL solicitada sea `/producto/15`.
+
+
+!!! tip "Comprobar la petición interna reescrita"
+    Para ver exactamente qué petición le llega al recurso final (por ejemplo, `producto.html?id=15`), puedes activar el log de reescritura (apartado 8) y consultar el fichero de errores:
+
+    ```bash
+    sudo tail -f /var/log/apache2/error.log
+    ```
+
+    Verás una línea similar a:
+
+    ```text
+    rewrite 'producto/15' -> '/producto.html?id=15'
+    ```
+
 
 ## 6. Forzar HTTPS con mod_rewrite
 
