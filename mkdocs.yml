@@ -73,8 +73,7 @@ nav:
         - Actividades: UD02 - WWW y protocolo HTTP/4. Actividades.md
         - HTTP: UD02 - WWW y protocolo HTTP/5. HTTP.md
       - Prácticas:
-        - Práctica 1: UD02 - WWW y protocolo HTTP/Práctica 1.md
-        - Práctica 2: UD02 - WWW y protocolo HTTP/Práctica 2.md        
+        - Práctica 1: UD02 - WWW y protocolo HTTP/Práctica 1.md   
   
   - UD03 - Introducción a los servidores web. Apache:
       - Teoría:
@@ -84,6 +83,7 @@ nav:
         - Práctica 1: UD03 - Introducción a servidores Web. Apache/Práctica 1.md
         - Práctica 2: UD03 - Introducción a servidores Web. Apache/Práctica 2.md
         - Práctica 3: UD03 - Introducción a servidores Web. Apache/Práctica 3.md
+        - Práctica 4: UD03 - Introducción a servidores Web. Apache/Práctica 4.md
 
   - UD04 - Gestión Avanzada de Servidores Web:
     - Teoría:
