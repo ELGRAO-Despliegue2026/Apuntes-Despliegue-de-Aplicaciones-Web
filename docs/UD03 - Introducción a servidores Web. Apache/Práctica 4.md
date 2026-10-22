@@ -88,8 +88,9 @@ RewriteEngine On
 RewriteRule ^viejo$ /nuevo.html [R=301,L]
 ```
 
-- `^viejo$`: expresión regular que coincide exactamente con la ruta `/viejo`.
-- `[R=301,L]`: `R=301` indica una redirección permanente, `L` (*Last*) indica que, si la regla coincide, no se evalúen más reglas.
+`^viejo$`: expresión regular que coincide exactamente con la ruta `/viejo`.
+
+`[R=301,L]`: `R=301` indica una redirección permanente (respuesta HTTP), `L` (*Last*) significa que si la condición se cumple deje de buscar.
 
 Comprueba el resultado:
 
@@ -113,9 +114,11 @@ Añade la regla:
 RewriteEngine On
 RewriteRule ^producto/([0-9]+)$ /producto.html?id=$1 [L]
 ```
+`([0-9]+)`: captura uno o más dígitos de la URL. Los paréntesis indican el grupo que está siendo "capturado". 
 
-- `([0-9]+)`: captura uno o más dígitos de la URL.
-- `$1`: representa el primer grupo capturado, que se añade como parámetro `id`.
+`$1`: representa el primer grupo capturado, que se añade como parámetro `id`.
+
+Si por ejemplo tenemos /(ab)+/([0-9]+) y queremos que se reescriba como num/<número> entonces tendríamos que hacer num/$2 ya que es el segundo grupo capturado (el primero es (ab)+)
 
 Comprueba:
 
@@ -142,7 +145,13 @@ Debería devolver **200 OK**, sirviendo realmente `producto.html` aunque la URL 
 
 ## 6. Forzar HTTPS con mod_rewrite
 
-Otra utilidad muy habitual de `mod_rewrite` es forzar que todo el tráfico HTTP se redirija a HTTPS (alternativa a usar `Redirect permanent` visto en la UD04):
+Otra utilidad muy habitual de `mod_rewrite` es forzar que todo el tráfico HTTP se redirija a HTTPS. 
+Para hacerlo, lo primero será habilitar el módulo `ssl` para que apache pueda utilizar puertos seguros. Para ello, ejecuta:
+```bash
+sudo a2enmod ssl
+```
+
+Después, en el `.htaccess` añade las siguientes líneas
 
 ```text
 RewriteEngine On
@@ -150,8 +159,12 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 ```
 
-- `RewriteCond %{HTTPS} off`: la regla siguiente solo se aplica si la conexión **no** es HTTPS.
-- `%{HTTP_HOST}` y `%{REQUEST_URI}`: variables que contienen el dominio solicitado y la ruta completa de la petición.
+`RewriteCond %{HTTPS} off` hace que la regla siguiente solo se aplica si la conexión **no** es HTTPS.
+
+`%{HTTP_HOST}` y `%{REQUEST_URI}` variables que contienen el dominio solicitado y la ruta completa de la petición.
+
+!!! tip Verificación
+    Para ver que ha funcionado correctamente, prueba a hacer una petición a tu servidor con `curl -I <ip>:<port>`. ¿Qué código devuelve la petición HTTP?¿Qué protocolo usa en la nueva ubicación (Location)?
 
 ## 7. Bloquear el acceso según el User-Agent
 
@@ -161,8 +174,9 @@ RewriteCond %{HTTP_USER_AGENT} ^BadBot [NC]
 RewriteRule ^.*$ - [F,L]
 ```
 
-- `[NC]`: la comparación no distingue mayúsculas/minúsculas (*No Case*).
-- `[F,L]`: `F` devuelve un código **403 Forbidden**.
+`[NC]`: la comparación no distingue mayúsculas/minúsculas (*No Case*).
+
+`[F,L]`: `F` devuelve un código **403 Forbidden**.
 
 Comprueba el bloqueo:
 
