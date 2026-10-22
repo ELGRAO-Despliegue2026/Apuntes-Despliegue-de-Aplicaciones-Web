@@ -79,10 +79,7 @@ nav:
   - UD03 - Introducción a los servidores web. Apache:
       - Teoría:
         - Índice: UD03 - Introducción a servidores Web. Apache/1. Índice.md
-        - Arquitecturas Web: UD03 - Introducción a servidores Web. Apache/2. Arquitectura Web.md
-        - Protocolos de internet: UD03 - Introducción a servidores Web. Apache/3. Protocolos de internet.md
-        - Actividades: UD03 - Introducción a servidores Web. Apache/4. Actividades.md
-        - Apache: UD03 - Introducción a servidores Web. Apache/5. Apache.md
+        - Apache: UD03 - Introducción a servidores Web. Apache/2. Apache.md
       - Prácticas:
         - Práctica 1: UD03 - Introducción a servidores Web. Apache/Práctica 1.md
         - Práctica 2: UD03 - Introducción a servidores Web. Apache/Práctica 2.md
@@ -91,8 +88,14 @@ nav:
   - UD04 - Gestión Avanzada de Servidores Web:
     - Teoría:
       - Índice: UD04 - Gestión Avanzada de Servidores Web/1. Índice.md
+      - Autenticación y control de acceso: UD04 - Gestión Avanzada de Servidores Web/2. Autenticación y control de acceso.md
+      - Certificados digitales: UD04 - Gestión Avanzada de Servidores Web/3. Certificados digitales.md
+      - Pruebas de funcionamiento del servidor: UD04 - Gestión Avanzada de Servidores Web/4. Pruebas de funcionamiento del servidor.md
+      - Aseguramiento de las comunicaciones: UD04 - Gestión Avanzada de Servidores Web/5. Aseguramiento de las comunicaciones.md
+      - Actividades: UD04 - Gestión Avanzada de Servidores Web/6. Actividades.md
     - Prácticas:
       - Práctica 1: UD04 - Gestión Avanzada de Servidores Web/Práctica 1.md
+      - Práctica 2: UD04 - Gestión Avanzada de Servidores Web/Práctica 2.md
 
   - UD05 - Administración de servidores de Aplicaciones:
       - Teoría:

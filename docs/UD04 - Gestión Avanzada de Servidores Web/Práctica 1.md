@@ -1,60 +1,93 @@
 <!-- filepath: /home/lenovo-carles/GithubDAW/Apuntes-Despliegue-de-Aplicaciones-Web/docs/UD04 - Gestión Avanzada de Servidores Web/Práctica 1.md -->
-# Práctica 1
+# Práctica 1 — Autenticación y control de acceso
 
-En esta práctica realizaremos una configuración avanzada sobre el servidor Apache instalado en prácticas anteriores: activaremos módulos adicionales, configuraremos compresión de contenido y habilitaremos HTTPS con un certificado autofirmado.
+En esta práctica protegerás un directorio del servidor Apache mediante autenticación básica (usuario/contraseña) y restricción por dirección IP.
 
 ## Objetivos
 
-- Activar y comprobar módulos de Apache.
-- Configurar compresión `mod_deflate`.
-- Generar un certificado autofirmado y habilitar HTTPS.
+- Crear un fichero de usuarios con `htpasswd`.
+- Proteger un directorio con autenticación Basic.
+- Combinar autenticación con restricción de acceso por IP.
+- Comprobar el resultado con `curl`.
 
-## 1. Comprobar los módulos activos
-
-```bash
-apache2ctl -M
-```
-
-## 2. Activar el módulo de compresión
+## 1. Preparar el directorio a proteger
 
 ```bash
-sudo a2enmod deflate
-sudo systemctl reload apache2
+sudo mkdir -p /var/www/html/privado
+echo "<h1>Zona privada</h1>" | sudo tee /var/www/html/privado/index.html
 ```
 
-Añade en tu VirtualHost:
+## 2. Crear el fichero de usuarios
+
+```bash
+sudo apt install apache2-utils -y
+sudo htpasswd -c /etc/apache2/.htpasswd usuario1
+sudo htpasswd /etc/apache2/.htpasswd usuario2
+```
+
+## 3. Configurar la protección en el VirtualHost
+
+Edita tu VirtualHost (por ejemplo `000-default.conf`) y añade:
 
 ```text
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/css application/javascript
-</IfModule>
+<Directory /var/www/html/privado>
+    AuthType Basic
+    AuthName "Zona restringida"
+    AuthUserFile /etc/apache2/.htpasswd
+    Require valid-user
+</Directory>
 ```
 
-## 3. Generar un certificado autofirmado
+Comprueba la sintaxis y recarga Apache:
 
 ```bash
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-  -keyout /etc/ssl/private/apache-selfsigned.key \
-  -out /etc/ssl/certs/apache-selfsigned.crt
-```
-
-## 4. Habilitar el módulo SSL y configurar HTTPS
-
-```bash
-sudo a2enmod ssl
-sudo a2ensite default-ssl
+sudo apache2ctl configtest
 sudo systemctl reload apache2
 ```
 
-Edita `/etc/apache2/sites-available/default-ssl.conf` para apuntar a tu certificado y tu `DocumentRoot`.
-
-## 5. Comprobación
+## 4. Comprobar el acceso sin credenciales
 
 ```bash
-curl -vk https://localhost
+curl -I http://localhost/privado/
+```
+
+Deberías obtener un código **401 Unauthorized**.
+
+## 5. Comprobar el acceso con credenciales correctas
+
+```bash
+curl -I -u usuario1:tu_contraseña http://localhost/privado/
+```
+
+Deberías obtener un código **200 OK**.
+
+## 6. Añadir restricción adicional por IP
+
+Modifica el bloque `<Directory>` para exigir, además del usuario, que la petición provenga de `127.0.0.1`:
+
+```text
+<Directory /var/www/html/privado>
+    AuthType Basic
+    AuthName "Zona restringida"
+    AuthUserFile /etc/apache2/.htpasswd
+    <RequireAll>
+        Require valid-user
+        Require ip 127.0.0.1
+    </RequireAll>
+</Directory>
+```
+
+Recarga Apache y repite las pruebas del apartado 4 y 5.
+
+## 7. Eliminar un usuario del fichero de contraseñas
+
+```bash
+sudo htpasswd -D /etc/apache2/.htpasswd usuario2
 ```
 
 ## Preguntas finales
 
-1. ¿Qué diferencia observas en el tamaño de las respuestas con y sin compresión activada?
-2. ¿Por qué el navegador muestra una advertencia de seguridad al usar un certificado autofirmado?
+1. ¿Qué código de estado HTTP devuelve Apache cuando las credenciales son incorrectas?
+2. ¿Por qué, aunque la autenticación esté correctamente configurada, seguiría siendo inseguro usar esta práctica en producción sin HTTPS?
+3. ¿Qué diferencia de comportamiento observas al combinar `Require valid-user` y `Require ip` dentro de `<RequireAll>` frente a usarlos sueltos (sin `RequireAll`)?
+

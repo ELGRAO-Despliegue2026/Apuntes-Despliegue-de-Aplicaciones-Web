@@ -29,12 +29,12 @@ Responde en tu cuaderno de prácticas:
 Visita ahora `https://www.google.com` y repite el análisis de la petición principal:
 
 1. ¿En qué puerto se ha establecido la conexión (pista: está en la respuesta el alt-svc)?
-2. Haz clic en el candado de la barra de direcciones. ¿Qué Autoridad de Certificación ha emitido el certificado?
+2. ¿Qué Autoridad de Certificación ha emitido el certificado? (Pista: Busca el candado a la izquierda de la URL en la barra de direcciones)
 3. ¿Para qué dominio es válido el certificado?
 
 ## 3. Peticiones HTTP con `curl`
 
-Abre una terminal (en Linux/Mac, o Git Bash en Windows) y ejecuta:
+Abre una terminal y ejecuta:
 
 ```bash
 curl -v http://www.example.com
