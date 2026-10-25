@@ -3,6 +3,38 @@
 
 En esta práctica aprenderás a activar y utilizar el módulo **mod_rewrite** de Apache, que permite reescribir y redirigir URLs de forma flexible mediante expresiones regulares.
 
+## Introducción a las expresiones regulares (regex)
+
+`mod_rewrite` basa todas sus reglas en **expresiones regulares (regex)**: patrones de texto que permiten describir y buscar coincidencias dentro de una cadena (en este caso, la URL solicitada).
+
+Una expresión regular se construye combinando **caracteres literales** (que deben coincidir exactamente) con **caracteres especiales** (que tienen un significado propio dentro de la regex). Por ejemplo, en el patrón `^producto/([0-9]+)$`:
+
+- `producto/` son caracteres literales.
+- `^`, `$`, `()`, `[0-9]` y `+` son caracteres especiales con un significado concreto.
+
+A continuación se resumen los caracteres especiales más utilizados en las reglas de `mod_rewrite`:
+
+| Carácter | Significado                                                      | Ejemplo                  |
+|:--------:|---------------------------------------------------------------------|------------------------------|
+| `^`      | Indica el **inicio** de la cadena                                   | `^producto` coincide con `producto/15`, pero no con `mi-producto` |
+| `$`      | Indica el **final** de la cadena                                    | `viejo$` coincide con `/muy-viejo`, pero no con `viejo-articulo` |
+| `.`      | Coincide con **cualquier carácter** (excepto salto de línea)         | `a.c` coincide con `abc`, `axc`, `a1c`... |
+| `*`      | El elemento anterior se repite **cero o más veces**                  | `ab*` coincide con `a`, `ab`, `abb`, `abbb`... |
+| `+`      | El elemento anterior se repite **una o más veces**                   | `[0-9]+` coincide con `5`, `42`, `12345`, pero no con una cadena vacía |
+| `?`      | El elemento anterior aparece **cero o una vez** (opcional)           | `colou?r` coincide con `color` y `colour` |
+| `[...]`  | Define una **clase de caracteres**: cualquiera de los indicados      | `[0-9]` coincide con un solo dígito; `[a-z]` con una letra minúscula |
+| `[^...]` | **Negación** de una clase de caracteres                              | `[^0-9]` coincide con cualquier carácter que **no** sea un dígito |
+| `(...)`  | Define un **grupo de captura**, reutilizable después como `$1`, `$2`... | `([0-9]+)` captura un número para usarlo en la sustitución |
+| `\|`     | Operador **OR**: coincide con una opción u otra                      | `gato\|perro` coincide con `gato` o con `perro` |
+| `{n}`    | El elemento anterior se repite **exactamente `n` veces**             | `[0-9]{4}` coincide con exactamente 4 dígitos (ej. un año) |
+| `{n,m}`  | El elemento anterior se repite **entre `n` y `m` veces**             | `[0-9]{2,4}` coincide con entre 2 y 4 dígitos |
+| `\`      | **Escapa** un carácter especial para tratarlo como literal           | `\.` coincide con un punto literal, no con "cualquier carácter" |
+
+!!! tip "Comprobar expresiones regulares"
+    Puedes probar y visualizar tus expresiones regulares antes de usarlas en Apache con herramientas online como [regex101.com](https://regex101.com), que además explican paso a paso qué hace cada parte del patrón.
+
+Con estas bases ya podemos entender las reglas de `mod_rewrite` que usaremos a lo largo de la práctica.
+
 ## ¿Qué es mod_rewrite?
 
 **mod_rewrite** es un módulo de Apache que permite modificar las URLs solicitadas por el cliente **antes** de que el servidor las procese. Se utiliza habitualmente para:
