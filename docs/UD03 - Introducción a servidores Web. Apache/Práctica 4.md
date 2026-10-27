@@ -175,30 +175,7 @@ Debería devolver **200 OK**, sirviendo realmente `producto.html` aunque la URL 
     ```
 
 
-## 6. Forzar HTTPS con mod_rewrite
-
-Otra utilidad muy habitual de `mod_rewrite` es forzar que todo el tráfico HTTP se redirija a HTTPS. 
-Para hacerlo, lo primero será habilitar el módulo `ssl` para que apache pueda utilizar puertos seguros. Para ello, ejecuta:
-```bash
-sudo a2enmod ssl
-```
-
-Después, en el `.htaccess` añade las siguientes líneas
-
-```text
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-```
-
-`RewriteCond %{HTTPS} off` hace que la regla siguiente solo se aplica si la conexión **no** es HTTPS.
-
-`%{HTTP_HOST}` y `%{REQUEST_URI}` variables que contienen el dominio solicitado y la ruta completa de la petición.
-
-!!! tip Verificación
-    Para ver que ha funcionado correctamente, prueba a hacer una petición a tu servidor con `curl -I <ip>:<port>`. ¿Qué código devuelve la petición HTTP?¿Qué protocolo usa en la nueva ubicación (Location)?
-
-## 7. Bloquear el acceso según el User-Agent
+## 6. Bloquear el acceso según el User-Agent
 
 ```text
 RewriteEngine On
@@ -216,12 +193,13 @@ Comprueba el bloqueo:
 curl -I -A "BadBot" http://localhost/
 ```
 
-## 8. Ver el registro de reescrituras (depuración)
+## 7. Ver el registro de reescrituras (depuración)
 
 Para depurar reglas complejas, puedes activar el log de reescritura mediante el módulo de log:
 
 ```text
 LogLevel alert rewrite:trace3
+LogLevel warn rewrite:trace3
 ```
 
 Añádelo al `VirtualHost` y consulta después:
