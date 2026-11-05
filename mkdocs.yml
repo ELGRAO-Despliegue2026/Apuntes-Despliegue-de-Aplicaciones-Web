@@ -93,9 +93,15 @@ nav:
       - Pruebas de funcionamiento del servidor: UD04 - Gestión Avanzada de Servidores Web/4. Pruebas de funcionamiento del servidor.md
       - Aseguramiento de las comunicaciones: UD04 - Gestión Avanzada de Servidores Web/5. Aseguramiento de las comunicaciones.md
       - Actividades: UD04 - Gestión Avanzada de Servidores Web/6. Actividades.md
+      - Documentación del servidor: UD04 - Gestión Avanzada de Servidores Web/7. Documentación del servidor.md
+      - Ajustes para la implantación de aplicaciones: UD04 - Gestión Avanzada de Servidores Web/8. Ajustes para la implantación de aplicaciones.md
+      - Virtualización y contenedores en la nube: UD04 - Gestión Avanzada de Servidores Web/9. Virtualización y contenedores en la nube.md
+      - Gestión y monitorización de logs: UD04 - Gestión Avanzada de Servidores Web/10. Gestión y monitorización de logs.md
     - Prácticas:
       - Práctica 1: UD04 - Gestión Avanzada de Servidores Web/Práctica 1.md
       - Práctica 2: UD04 - Gestión Avanzada de Servidores Web/Práctica 2.md
+      - Práctica 3: UD04 - Gestión Avanzada de Servidores Web/Práctica 3.md
+      - Práctica 4: UD04 - Gestión Avanzada de Servidores Web/Práctica 4.md
 
   - UD05 - Administración de servidores de aplicaciones:
       - Teoría:
