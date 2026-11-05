@@ -38,7 +38,7 @@ Con estas bases ya podemos entender las reglas de `mod_rewrite` que usaremos a l
 ## ¿Qué es mod_rewrite?
 
 **mod_rewrite** es un módulo de Apache que permite modificar las URLs solicitadas por el cliente **antes** de que el servidor las procese. Se utiliza habitualmente para:
-
+                                 
 - Crear **URLs amigables** (ej. `/producto/15` en lugar de `/producto.php?id=15`).
 - Redirigir peticiones de un dominio/ruta a otro.
 - Forzar el uso de HTTPS o de `www`.
