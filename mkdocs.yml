@@ -97,9 +97,21 @@ nav:
       - Práctica 1: UD04 - Gestión Avanzada de Servidores Web/Práctica 1.md
       - Práctica 2: UD04 - Gestión Avanzada de Servidores Web/Práctica 2.md
 
-  - UD05 - Administración de servidores de Aplicaciones:
+  - UD05 - Administración de servidores de aplicaciones:
       - Teoría:
-        - Índice: UD05 - Administración de servidores de Aplicaciones/1. Índice.md
+        - Índice: UD05 - Administración de servidores de aplicaciones/1. Índice.md
+        - Componentes y funcionamiento: UD05 - Administración de servidores de aplicaciones/2. Componentes y funcionamiento.md
+        - Archivos de configuración y bibliotecas: UD05 - Administración de servidores de aplicaciones/3. Archivos de configuración y bibliotecas.md
+        - Cooperación con el servidor web: UD05 - Administración de servidores de aplicaciones/4. Cooperación con el servidor web.md
+        - Mecanismos de seguridad: UD05 - Administración de servidores de aplicaciones/5. Mecanismos de seguridad.md
+        - Componentes web: UD05 - Administración de servidores de aplicaciones/6. Componentes web.md
+        - Despliegue de aplicaciones: UD05 - Administración de servidores de aplicaciones/7. Despliegue de aplicaciones.md
+        - Pruebas de funcionamiento y rendimiento: UD05 - Administración de servidores de aplicaciones/8. Pruebas de funcionamiento y rendimiento.md
+        - Documentación del servidor: UD05 - Administración de servidores de aplicaciones/9. Documentación del servidor.md
+        - Virtualización y contenedores: UD05 - Administración de servidores de aplicaciones/10. Virtualización y contenedores.md
+        - Actividades: UD05 - Administración de servidores de aplicaciones/11. Actividades.md
+      - Prácticas:
+        - Práctica 1: UD05 - Administración de servidores de aplicaciones/Práctica 1.md
 
   - UD06 - Servidores de transferencia de archivos:
       - Teoría:
