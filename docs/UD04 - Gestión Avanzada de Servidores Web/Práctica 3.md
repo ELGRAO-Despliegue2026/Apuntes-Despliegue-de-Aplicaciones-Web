@@ -34,6 +34,29 @@ COPY ./public-html/ /usr/local/apache2/htdocs/
 EXPOSE 80
 ```
 
+!!!  DANGER Importante: 
+    La estructura de carpetas en httpd es diferente que con el apache que descargamos con apt. Aquí la filosofía es tener todo dentro de una única carpeta /usr/local/apache2. El mapeo es el siguiente:
+
+  | Concepto | `httpd` (Docker) | `apache2` (Debian/Ubuntu) |
+  |---|---|---|
+  | Config principal | `/usr/local/apache2/conf/httpd.conf` | `/etc/apache2/apache2.conf` |
+  | Web (DocumentRoot) | `/usr/local/apache2/htdocs` | `/var/www/html` |
+  | Logs | `/usr/local/apache2/logs` | `/var/log/apache2` |
+  | Módulos | `/usr/local/apache2/modules` | `/usr/lib/apache2/modules` |
+  | Ejecutable | `/usr/local/apache2/bin/httpd` | `/usr/sbin/apache2` |
+  | Nombre del binario | `httpd` | `apache2` |
+  | Activar un módulo | Descomentar `LoadModule` en `httpd.conf` | `a2enmod nombre` |
+  | Activar un sitio | Editar `httpd.conf` o incluir un archivo | `a2ensite nombre` |
+  | Config modular | Un archivo grande + `extra/` | Muchos archivos con enlaces simbólicos |
+
+!!! TIP
+    Diferencias importantes en la práctica
+    No existen a2enmod, a2ensite ni sites-available en la imagen httpd. Esas herramientas son específicas de Debian. En httpd todo se hace editando httpd.conf o añadiendo líneas Include.
+    Logs: la imagen httpd redirige los logs a stdout/stderr (enlaces a /proc/self/fd/1 y /proc/self/fd/2), de modo que docker logs o el servicio de logs de la nube los recoge directamente. En una instalación con apt van a archivos.
+    Usuario: en httpd el proceso corre como daemon, en Debian como www-data. Importa si ajustas permisos de archivos.
+    VirtualHosts: en httpd los pones en conf/extra/httpd-vhosts.conf (descomentando su Include) o directamente en httpd.conf. En Debian, un archivo por sitio en sites-available/.
+  
+
 ## 4. Construir y ejecutar la imagen
 
 ```bash
