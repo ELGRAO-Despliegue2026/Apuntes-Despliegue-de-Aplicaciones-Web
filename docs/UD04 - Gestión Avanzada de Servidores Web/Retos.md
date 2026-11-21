@@ -6,7 +6,7 @@ Configura dos dominios (usa nip.io) en el mismo Apache mediante virtual hosts, y
 
 # Reto 2: Proxy inverso con nginx delante de Apache
 
-Despliega una página estática en Apache (puerto 8080) y configura nginx como proxy inverso en el puerto 80, de forma que los usuarios solo accedan por nginx. Comprueba que Apache no responde a peticiones externas directas (restringe Listen a localhost o a la red interna). Añade las cabeceras X-Real-IP y X-Forwarded-For y verifica en los logs de Apache que se registra la IP real del cliente (módulo mod_remoteip).
+Despliega una página estática en Apache y configura nginx como proxy inverso en el puerto 8090, de forma que los usuarios solo accedan por nginx. Comprueba que Apache no responde a peticiones externas directas (restringe Listen a localhost o a la red interna). Añade las cabeceras X-Real-IP y X-Forwarded-For y verifica en los logs de Apache que se registra la IP real del cliente (módulo mod_remoteip).
 
 Preguntas: 
 
