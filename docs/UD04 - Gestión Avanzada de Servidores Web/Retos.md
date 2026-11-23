@@ -18,7 +18,7 @@ Preguntas:
 
 # Reto 3: Balanceo de carga con pesos y comprobdockeración de fallos
 
-Despliega la misma aplicación en tres servidores Apache, cada uno mostrando su número (contenedor 1 muestra <h1>Servidor 1</h1> etc.). Configura nginx como balanceador con un upstream donde un servidor tenga más peso (weight=3), otro peso normal y el tercero como backup. Apaga servidores uno a uno y demuestra que el servicio sigue disponible y cómo se redistribuye el tráfico. Prueba también ip_hash para sesiones persistentes y explica la diferencia.
+Despliega la misma aplicación en tres servidores Apache, cada uno mostrando su número (contenedor 1 muestra Servidor 1 etc.). Configura nginx como balanceador con un upstream donde un servidor tenga más peso (weight=3), otro peso normal y el tercero como backup. Apaga servidores uno a uno y demuestra que el servicio sigue disponible y cómo se redistribuye el tráfico. Prueba también ip_hash para sesiones persistentes y explica la diferencia.
 
 
 Pasos: 
